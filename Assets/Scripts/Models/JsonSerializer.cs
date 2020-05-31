@@ -29,8 +29,6 @@ public class JsonSerializer : MonoBehaviour
         // ----- Modifying the character panel to update the name and max HP / MP
 
         CharacterParametersController.instance.activeCharacter.nameInput.text = CharacterParametersController.instance.name.text;
-        CharacterParametersController.instance.activeCharacter.maxHPInput.text = "/ " + CharacterParametersController.instance.pv.text;
-        CharacterParametersController.instance.activeCharacter.maxMPInput.text = "/ " + CharacterParametersController.instance.pm.text;
 
         // ----- Generating the SaveCharacter object we will save
 

@@ -49,7 +49,7 @@
         "sangFroid": 0
     },
     "temporaryStatsBonuses": {
-        "force": 0,
+        "force": 10,
         "defense": 0,
         "adresse": 0,
         "agilite": 0,

@@ -31,6 +31,7 @@ public class CharacterParametersController : MonoBehaviour
         
         if (characters.Count != 0)
         {
+            characters[0].Select();
             characters[0].OpenCharacter();
         }
     }
@@ -109,4 +110,12 @@ public class CharacterParametersController : MonoBehaviour
     public InputField sangFroidBase;
     public InputField sangFroidModifPerm;
     public InputField sangFroidModifTemp;
+
+    public void UnselectEveryCharacter()
+    {
+        foreach (Character character in characters)
+        {
+            character.Unselect();
+        }
+    }
 }

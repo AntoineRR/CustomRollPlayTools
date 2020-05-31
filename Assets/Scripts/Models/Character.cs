@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     [Header("Parameters")]
     public SaveCharacter saveCharacter;
@@ -14,33 +15,96 @@ public class Character : MonoBehaviour
     public InputField stateInput;
     public InputField remainingHPInput;
     public InputField remainingMPInput;
-    public Text maxHPInput;
-    public Text maxMPInput;
 
-    void Start()
+    [Header("UI Elements")]
+    public Image background;
+    public Image outline;
+
+    [HideInInspector]
+    public Color normalColor;
+    [HideInInspector]
+    public Color highlightedColor;
+    [HideInInspector]
+    public Color pressedColor;
+    [HideInInspector]
+    public Color outlineSelectedColor;
+    
+    public void Initialize(SaveCharacter c = null)
     {
-        // Saving a grey color if the character was just created
-        if (saveCharacter.color.Count == 0)
+        if (c == null)
         {
             saveCharacter.color = new List<int>();
             saveCharacter.color.Add(150);
             saveCharacter.color.Add(150);
             saveCharacter.color.Add(150);
         }
+        else
+        {
+            saveCharacter = c;
+            
+            nameInput.text = c.characterName;
 
-        // Changing UI color depending on the color associated with the character
-        Button characterButton = GetComponentInChildren<Button>();
-        ColorBlock buttonColors = characterButton.colors;
+            remainingHPInput.text = c.remainingHP.ToString();
+            remainingMPInput.text = c.remainingMP.ToString();
+
+            stateInput.text = c.state;
+        }
 
         List<float> floatColor = new List<float>();
         floatColor.Add((float)saveCharacter.color[0] / 255);
         floatColor.Add((float)saveCharacter.color[1] / 255);
         floatColor.Add((float)saveCharacter.color[2] / 255);
 
-        buttonColors.normalColor = new Color(floatColor[0], floatColor[1], floatColor[2]);
-        buttonColors.highlightedColor = new Color(floatColor[0] + 0.05f, floatColor[1] + 0.05f, floatColor[2] + 0.05f);
-        buttonColors.pressedColor = new Color(floatColor[0] - 0.05f, floatColor[1] - 0.05f, floatColor[2] - 0.05f);
-        characterButton.colors = buttonColors;
+        normalColor = new Color(floatColor[0], floatColor[1], floatColor[2]);
+        highlightedColor = new Color(floatColor[0] + 0.05f, floatColor[1] + 0.05f, floatColor[2] + 0.05f);
+        pressedColor = new Color(floatColor[0] - 0.05f, floatColor[1] - 0.05f, floatColor[2] - 0.05f);
+        outlineSelectedColor = new Color(floatColor[0] + 0.1f, floatColor[1] + 0.1f, floatColor[2] + 0.1f);
+
+        background.color = normalColor;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        background.color = highlightedColor;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        background.color = normalColor;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        background.color = pressedColor;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        CharacterParametersController.instance.UnselectEveryCharacter();
+
+        background.color = highlightedColor;
+        Select();
+
+        OpenCharacter();
+    }
+
+    public void Select()
+    {
+        outline.color = outlineSelectedColor;
+    }
+
+    public void Unselect()
+    {
+        outline.color = new Color(0.0f, 0.0f, 0.0f);
+    }
+
+    public void HealCharacter()
+    {
+        remainingHPInput.text = saveCharacter.maxHP.ToString();
+        saveCharacter.remainingHP = saveCharacter.maxHP;
+
+        remainingMPInput.text = saveCharacter.maxMP.ToString();
+        saveCharacter.remainingMP = saveCharacter.maxMP;
     }
 
     public void OpenCharacter()
@@ -193,7 +257,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void OnIdChanged()
+    public void OnStateChanged()
     {
         saveCharacter.state = stateInput.text;
     }

@@ -33,32 +33,20 @@ public class ButtonController : MonoBehaviour
     public void AddCharacter()
     {
         GameObject go = Instantiate(character, characterContainer.transform);
+        Character instantiatedCharacter = go.GetComponentInChildren<Character>();
+        instantiatedCharacter.Initialize();
+
         addCharacter.transform.parent.transform.SetAsLastSibling();
 
-        CharacterParametersController.instance.characters.Add(go.GetComponent<Character>());
+        CharacterParametersController.instance.characters.Add(instantiatedCharacter);
     }
 
     public Character AddCharacter(SaveCharacter c)
     {
         GameObject go = Instantiate(character, characterContainer.transform);
-
-        Character instantiatedCharacter = go.GetComponent<Character>();
-
-        // Copying character
-        instantiatedCharacter.saveCharacter = c;
-
-        // Modifying inputs
-
-        instantiatedCharacter.nameInput.text = c.characterName;
-
-        instantiatedCharacter.remainingHPInput.text = c.remainingHP.ToString();
-        instantiatedCharacter.remainingMPInput.text = c.remainingMP.ToString();
-
-        instantiatedCharacter.stateInput.text = c.state;
-
-        instantiatedCharacter.maxHPInput.text = "/ "+c.maxHP.ToString();
-        instantiatedCharacter.maxMPInput.text = "/ "+c.maxMP.ToString();
-
+        Character instantiatedCharacter = go.GetComponentInChildren<Character>();
+        instantiatedCharacter.Initialize(c);
+        
         // Placing the add button as the last element
         addCharacter.transform.parent.transform.SetAsLastSibling();
 
