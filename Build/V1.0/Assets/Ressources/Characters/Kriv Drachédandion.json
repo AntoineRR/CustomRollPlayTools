@@ -1,0 +1,83 @@
+{
+    "name": "Kriv Drachédandion",
+    "id": "",
+    "remainingHP": 0,
+    "remainingMP": 0,
+    "healthPoints": 12,
+    "manaPoints": 9,
+    "stats": {
+        "force": 80,
+        "defense": 50,
+        "adresse": 60,
+        "agilite": 30,
+        "vitesse": 50,
+        "seduction": 10,
+        "intimidation": 75,
+        "rhetorique": 15,
+        "premiereImpression": 15,
+        "dressage": 45,
+        "magie": 50,
+        "erudition": 30,
+        "perception": 30,
+        "resistanceMentale": 30,
+        "sangFroid": 70
+    },
+    "permanentStatsBonuses": {
+        "force": 0,
+        "defense": 15,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": -10,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "temporaryStatsBonuses": {
+        "force": 0,
+        "defense": 0,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": 0,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "weapons": [
+        {
+            "weaponName": "Epée à une main",
+            "diceNumber": 1,
+            "damages": 8,
+            "bonusDamages": 0,
+            "range": 0.0
+        },
+        {
+            "weaponName": "Arc",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 2,
+            "range": 0.0
+        },
+        {
+            "weaponName": "Epée avec Givrelame",
+            "diceNumber": 1,
+            "damages": 8,
+            "bonusDamages": 2,
+            "range": 0.0
+        }
+    ],
+    "abilities": []
+}

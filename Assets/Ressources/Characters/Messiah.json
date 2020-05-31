@@ -1,0 +1,114 @@
+{
+    "characterName": "Messiah",
+    "state": "",
+    "remainingHP": 0,
+    "remainingMP": 0,
+    "maxHP": 9,
+    "maxMP": 12,
+    "color": [206,171,185],
+    "stats": {
+        "force": 10,
+        "defense": 10,
+        "adresse": 65,
+        "agilite": 65,
+        "vitesse": 65,
+        "seduction": 10,
+        "intimidation": 70,
+        "rhetorique": 10,
+        "premiereImpression": 10,
+        "dressage": 60,
+        "magie": 75,
+        "erudition": 10,
+        "perception": 45,
+        "resistanceMentale": 60,
+        "sangFroid": 75
+    },
+    "permanentStatsBonuses": {
+        "force": 0,
+        "defense": 10,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": -5,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "temporaryStatsBonuses": {
+        "force": 0,
+        "defense": 0,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": 0,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "weapons": [
+        {
+            "weaponName": "Kunaï",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 1,
+            "range": 30.0
+        },
+        {
+            "weaponName": "Katana",
+            "diceNumber": 1,
+            "damages": 6,
+            "bonusDamages": 0,
+            "range": 0.0
+        }
+    ],
+    "abilities": [
+        {
+            "abilityName": "Ultralaser Standard",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 3,
+            "range": 0.0,
+            "pmCost": 3,
+            "description": ""
+        },
+        {
+            "abilityName": "Ultralaser Ennemi Nocturne",
+            "diceNumber": 1,
+            "damages": 6,
+            "bonusDamages": 3,
+            "range": 0.0,
+            "pmCost": 3,
+            "description": ""
+        },
+        {
+            "abilityName": "4 Fleurs de Lotus",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 0,
+            "range": 0.0,
+            "pmCost": 0,
+            "description": ""
+        },
+        {
+            "abilityName": "Angélisme",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 2,
+            "range": 0.0,
+            "pmCost": 4,
+            "description": "Récupère les PV volés à l'adversaire"
+        }
+    ]
+}

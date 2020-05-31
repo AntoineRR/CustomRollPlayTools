@@ -1,0 +1,76 @@
+{
+    "name": "Kayne Doengarde",
+    "id": "",
+    "remainingHP": 0,
+    "remainingMP": 0,
+    "healthPoints": 11,
+    "manaPoints": 10,
+    "stats": {
+        "force": 75,
+        "defense": 30,
+        "adresse": 40,
+        "agilite": 60,
+        "vitesse": 60,
+        "seduction": 20,
+        "intimidation": 50,
+        "rhetorique": 45,
+        "premiereImpression": 40,
+        "dressage": 10,
+        "magie": 70,
+        "erudition": 20,
+        "perception": 45,
+        "resistanceMentale": 15,
+        "sangFroid": 60
+    },
+    "permanentStatsBonuses": {
+        "force": 0,
+        "defense": 10,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": -5,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "temporaryStatsBonuses": {
+        "force": 0,
+        "defense": 0,
+        "adresse": -5,
+        "agilite": -5,
+        "vitesse": 0,
+        "seduction": -5,
+        "intimidation": -5,
+        "rhetorique": -5,
+        "premiereImpression": -5,
+        "dressage": -5,
+        "magie": -5,
+        "erudition": -5,
+        "perception": -5,
+        "resistanceMentale": -5,
+        "sangFroid": -5
+    },
+    "weapons": [
+        {
+            "weaponName": "Epée Rosée",
+            "diceNumber": 1,
+            "damages": 8,
+            "bonusDamages": 0,
+            "range": 0.0
+        },
+        {
+            "weaponName": "Arbalète",
+            "diceNumber": 1,
+            "damages": 6,
+            "bonusDamages": 2,
+            "range": 70.0
+        }
+    ],
+    "abilities": []
+}

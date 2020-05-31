@@ -1,0 +1,75 @@
+{
+    "characterName": "Larmor",
+    "pnj": true,
+    "state": "",
+    "remainingHP": 13,
+    "remainingMP": 0,
+    "maxHP": 13,
+    "maxMP": 0,
+    "color": [
+        150,
+        150,
+        150
+    ],
+    "stats": {
+        "force": 40,
+        "defense": 30,
+        "adresse": 50,
+        "agilite": 50,
+        "vitesse": 80,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "permanentStatsBonuses": {
+        "force": 0,
+        "defense": 0,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": 0,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "temporaryStatsBonuses": {
+        "force": 0,
+        "defense": 0,
+        "adresse": 0,
+        "agilite": 0,
+        "vitesse": 0,
+        "seduction": 0,
+        "intimidation": 0,
+        "rhetorique": 0,
+        "premiereImpression": 0,
+        "dressage": 0,
+        "magie": 0,
+        "erudition": 0,
+        "perception": 0,
+        "resistanceMentale": 0,
+        "sangFroid": 0
+    },
+    "weapons": [
+        {
+            "weaponName": "Griffe",
+            "diceNumber": 1,
+            "damages": 4,
+            "bonusDamages": 0,
+            "range": 0.0
+        }
+    ],
+    "abilities": []
+}
