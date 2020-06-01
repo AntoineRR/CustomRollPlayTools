@@ -1,11 +1,19 @@
 {
     "characterName": "Kriv Drachédandion",
+    "pnj": false,
     "state": "",
-    "remainingHP": 0,
-    "remainingMP": 0,
+    "remainingHP": 12,
+    "remainingMP": 9,
     "maxHP": 12,
     "maxMP": 9,
-    "color": [98,219,203],
+    "gold": 0,
+    "silver": 0,
+    "copper": 0,
+    "color": [
+        98,
+        219,
+        203
+    ],
     "stats": {
         "force": 80,
         "defense": 50,
@@ -80,5 +88,6 @@
             "range": 0.0
         }
     ],
-    "abilities": []
+    "abilities": [],
+    "items": []
 }

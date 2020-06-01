@@ -6,10 +6,13 @@
     "remainingMP": 0,
     "maxHP": 13,
     "maxMP": 0,
+    "gold": 0,
+    "silver": 0,
+    "copper": 0,
     "color": [
-        150,
-        150,
-        150
+        141,
+        141,
+        141
     ],
     "stats": {
         "force": 40,
@@ -71,5 +74,6 @@
             "range": 0.0
         }
     ],
-    "abilities": []
+    "abilities": [],
+    "items": []
 }

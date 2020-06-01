@@ -61,10 +61,10 @@ public class TabGroup : MonoBehaviour
             }
         }
 
-        if (button.GetComponentInChildren<Text>().text == "Combat")
-        {
-            DropdownUpdater.instance.FillCharacterDropdowns();
-        }
+        //if (button.GetComponentInChildren<Text>().text == "Combat")
+        //{
+        //    DropdownUpdater.instance.FillCharacterDropdowns();
+        //}
     }
 
     private void _ResetTabs()

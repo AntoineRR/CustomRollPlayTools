@@ -2,8 +2,8 @@
     "characterName": "Eliada",
     "pnj": false,
     "state": "",
-    "remainingHP": 0,
-    "remainingMP": 0,
+    "remainingHP": 9,
+    "remainingMP": 12,
     "maxHP": 9,
     "maxMP": 12,
     "gold": 0,
@@ -49,7 +49,7 @@
         "sangFroid": 0
     },
     "temporaryStatsBonuses": {
-        "force": 10,
+        "force": 0,
         "defense": 0,
         "adresse": 0,
         "agilite": 0,

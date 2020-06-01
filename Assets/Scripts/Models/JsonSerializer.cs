@@ -444,6 +444,15 @@ public class JsonSerializer : MonoBehaviour
         streamWriter.Close();
     }
 
+    public void QuickSaveCharacter(SaveCharacter toSave)
+    {
+        string path = "Assets/Ressources/Characters/" + toSave.characterName + ".json";
+        string json = JsonUtility.ToJson(toSave, true);
+        StreamWriter streamWriter = new StreamWriter(path);
+        streamWriter.WriteLine(json);
+        streamWriter.Close();
+    }
+
     public List<SaveCharacter> GetCharacters()
     {
         string path = "Assets/Ressources/Characters";

@@ -63,6 +63,22 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         background.color = normalColor;
     }
 
+    public void SetColor(Color color)
+    {
+        saveCharacter.color = new List<int>();
+        saveCharacter.color.Add((int)(color[0] * 255));
+        saveCharacter.color.Add((int)(color[1] * 255));
+        saveCharacter.color.Add((int)(color[2] * 255));
+
+        normalColor = color;
+        highlightedColor = new Color(color[0] + 0.05f, color[1] + 0.05f, color[2] + 0.05f);
+        pressedColor = new Color(color[0] - 0.05f, color[1] - 0.05f, color[2] - 0.05f);
+        outlineSelectedColor = new Color(color[0] + 0.1f, color[1] + 0.1f, color[2] + 0.1f);
+
+        background.color = highlightedColor;
+        outline.color = outlineSelectedColor;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         background.color = highlightedColor;
@@ -91,6 +107,12 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void Select()
     {
         outline.color = outlineSelectedColor;
+
+        CharacterParametersController.instance.activeCharacter = this;
+        ColorPickerWindow.instance.gameObject.SetActive(false);
+
+        FightController.instance.attaquant = saveCharacter;
+        DropdownUpdater.instance.UpdateAttaquant();
     }
 
     public void Unselect()
@@ -105,6 +127,8 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         remainingMPInput.text = saveCharacter.maxMP.ToString();
         saveCharacter.remainingMP = saveCharacter.maxMP;
+
+        JsonSerializer.instance.QuickSaveCharacter(saveCharacter);
     }
 
     public void OpenCharacter()
@@ -117,12 +141,16 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             floatColor.Add((float)saveCharacter.color[2] / 255);
 
             CharacterParametersController.instance.characterStatsPanel.GetComponent<Image>().color = new Color(floatColor[0], floatColor[1], floatColor[2], 0.4f);
+            
+            ColorBlock colors = CharacterParametersController.instance.colorButton.colors;
+            colors.normalColor = new Color(floatColor[0], floatColor[1], floatColor[2]);
+            colors.highlightedColor = new Color(floatColor[0] + 0.05f, floatColor[1] + 0.05f, floatColor[2] + 0.05f);
+            colors.pressedColor = new Color(floatColor[0] - 0.05f, floatColor[1] - 0.05f, floatColor[2] - 0.05f);
+            CharacterParametersController.instance.colorButton.colors = colors;
         }
-
-        CharacterParametersController.instance.activeCharacter = this;
-
+        
         CharacterParametersController.instance.name.text = saveCharacter.characterName;
-
+        
         CharacterParametersController.instance.pv.text = saveCharacter.maxHP.ToString();
         CharacterParametersController.instance.pm.text = saveCharacter.maxMP.ToString();
 
@@ -243,6 +271,8 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             saveCharacter.remainingHP = 0;
         }
+
+        JsonSerializer.instance.QuickSaveCharacter(saveCharacter);
     }
 
     public void OnRemainingMPChanged()
@@ -255,11 +285,15 @@ public class Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             saveCharacter.remainingMP = 0;
         }
+
+        JsonSerializer.instance.QuickSaveCharacter(saveCharacter);
     }
 
     public void OnStateChanged()
     {
         saveCharacter.state = stateInput.text;
+
+        JsonSerializer.instance.QuickSaveCharacter(saveCharacter);
     }
 }
 

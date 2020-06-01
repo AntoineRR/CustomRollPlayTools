@@ -1,11 +1,19 @@
 {
     "characterName": "Messiah",
+    "pnj": false,
     "state": "",
-    "remainingHP": 0,
-    "remainingMP": 0,
+    "remainingHP": 9,
+    "remainingMP": 12,
     "maxHP": 9,
     "maxMP": 12,
-    "color": [206,171,185],
+    "gold": 0,
+    "silver": 0,
+    "copper": 0,
+    "color": [
+        206,
+        171,
+        185
+    ],
     "stats": {
         "force": 10,
         "defense": 10,
@@ -110,5 +118,6 @@
             "pmCost": 4,
             "description": "Récupère les PV volés à l'adversaire"
         }
-    ]
+    ],
+    "items": []
 }

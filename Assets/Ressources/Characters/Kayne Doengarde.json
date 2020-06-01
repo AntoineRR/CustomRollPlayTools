@@ -1,10 +1,14 @@
 {
     "characterName": "Kayne Doengarde",
+    "pnj": false,
     "state": "",
-    "remainingHP": 0,
-    "remainingMP": 0,
+    "remainingHP": 11,
+    "remainingMP": 10,
     "maxHP": 11,
     "maxMP": 10,
+    "gold": 0,
+    "silver": 0,
+    "copper": 0,
     "color": [
         206,
         107,
@@ -77,5 +81,6 @@
             "range": 70.0
         }
     ],
-    "abilities": []
+    "abilities": [],
+    "items": []
 }
